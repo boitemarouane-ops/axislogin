@@ -70,7 +70,7 @@ const companyBank    = s.bankName    || ''
   ])
 
   const exRate = lines.find(l => l.exchangeRate && l.exchangeRate !== 1)?.exchangeRate
-    ?? (invoice as Record<string,unknown>).exchangeRateGlobal as number ?? 1
+    ?? (invoice as unknown as Record<string, unknown>).exchangeRateGlobal as number ?? 1
 
   const amountWords = capitalize(amountToWordsFR(totals.totalTTC))
 
