@@ -22,7 +22,7 @@ function buildDocDefinition(invoice: Invoice, client: Client | null, settings: C
 
   const companyName    = settings.companyName || 'AXIS SHIPPING LINE'
   const companyAddress = settings.address     || ''
-  const companyCity    = settings.city        || ''
+  const companyCity = ''
   const companyPhone   = settings.phone       || ''
   const companyEmail   = settings.email       || ''
   const companyIce     = settings.ice         || ''
