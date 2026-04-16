@@ -20,18 +20,20 @@ function buildDocDefinition(invoice: Invoice, client: Client | null, settings: C
   const lines  = invoice.lines as InvoiceLine[]
   const totals = calcInvoiceTotals(lines)
 
-  const companyName    = settings.companyName || 'AXIS SHIPPING LINE'
-  const companyAddress = settings.address     || ''
-  const companyCity = ''
-  const companyPhone   = settings.phone       || ''
-  const companyEmail   = settings.email       || ''
-  const companyIce     = settings.ice         || ''
-  const companyIf      = settings.if_         || ''
-  const companyRc      = settings.rc          || ''
-  const companyPatente = settings.patente     || ''
-  const companyIban    = settings.bankRib     || ''
-  const companySwift   = settings.bankSwift   || ''
-  const companyBank    = settings.bankName    || ''
+const s = settings as any
+
+const companyName    = s.companyName || 'AXIS SHIPPING LINE'
+const companyAddress = s.address     || ''
+const companyCity    = ''
+const companyPhone   = s.phone       || ''
+const companyEmail   = s.email       || ''
+const companyIce     = s.ice         || ''
+const companyIf      = s.if_         || ''
+const companyRc      = s.rc          || ''
+const companyPatente = s.patente     || ''
+const companyIban    = s.bankRib     || ''
+const companySwift   = s.bankSwift   || ''
+const companyBank    = s.bankName    || ''
 
   const clientName = client?.companyName ?? '—'
   const clientAddr = [client?.address1, client?.address2].filter(Boolean).join(', ')
