@@ -16,7 +16,7 @@ const WHT = '#ffffff'
 const GRY = '#f5f5f5'
 
 function buildDocDefinition(invoice: Invoice, client: Client | null, settings: CompanySettings) {
-  const md     = invoice.modeData as Record<string, string>
+  const md = invoice.modeData as unknown as Record<string, string>
   const lines  = invoice.lines as InvoiceLine[]
   const totals = calcInvoiceTotals(lines)
 
